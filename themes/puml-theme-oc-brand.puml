@@ -1,8 +1,3 @@
-' Author: Frank Nillies
-' Copyright (c) 2019 by Brett Schwarz
-' Based on Puml by Brett Schwarz
-' https://github.com/bschwarz/puml-themes
-
 !$THEME = "oc-brand"
 
 !if %not(%variable_exists("$BGCOLOR"))
