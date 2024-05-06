@@ -1,8 +1,7 @@
-''
-'' Author: Frank Nillies
-'' Copyright (c) 2019 by Brett Schwarz
-'' Based on Puml by Brett Schwarz
-'' https://github.com/bschwarz/puml-themes
+' Author: Frank Nillies
+' Copyright (c) 2019 by Brett Schwarz
+' Based on Puml by Brett Schwarz
+' https://github.com/bschwarz/puml-themes
 
 !$THEME = "oc-brand"
 
@@ -13,9 +12,9 @@
 skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
-''
-'' Colors taken from the css file of the BS theme
-''
+'
+' Colors taken from the css file of the BS theme
+'
 !$BLUE = "#033C73"
 !$INDIGO = "#6610F2"
 !$PURPLE = "#6F42C1"
@@ -38,11 +37,11 @@ skinparam useBetaStyle false
 !$LIGHT = "#F8F9FA"
 !$DARK = "#343A40"
 
-'' *_LIGHT = tint (lighter) of the main color of 80%
-''          where TINT is calculated by clr + (255-clr) * tint_factor
-'' *_DARK = shade (darker) of the main color of 80%
-''          and SHADE is calculated by clr * (1 - shade_factor)
-''
+' *_LIGHT = tint (lighter) of the main color of 80%
+'          where TINT is calculated by clr + (255-clr) * tint_factor
+' *_DARK = shade (darker) of the main color of 80%
+'          and SHADE is calculated by clr * (1 - shade_factor)
+'
 !$FGCOLOR = $DARK
 !$PRIMARY_LIGHT = "#59B6EC"
 !$PRIMARY_DARK = "#2683B9"
@@ -81,9 +80,9 @@ skinparam useBetaStyle false
 	BackgroundColor $PRIMARY_LIGHT-$PRIMARY
 !endprocedure
 
-''
-'' Global Default Values
-''
+'
+' Global Default Values
+'
 skinparam defaultFontName        "Verdana"
 skinparam defaultFontSize        12
 skinparam dpi                    100
@@ -137,7 +136,7 @@ skinparam activity {
 	BarColor $SUCCESS
 	StartColor $INFO
 	EndColor $INFO
-	''
+	'
 	DiamondBackgroundColor $WHITE-$SECONDARY_LIGHT
   	DiamondBorderColor $SECONDARY_DARK
 	DiamondFontColor $SECONDARY_TEXT
@@ -178,34 +177,34 @@ skinparam sequence {
 	BackgroundColor $BGCOLOR
 	StartColor $PRIMARY
 	EndColor $PRIMARY
-	''
+	'
 	BoxBackgroundColor $BGCOLOR
 	BoxBorderColor $GRAY
 	BoxFontColor $DARK
-	''
+	'
 	DelayFontColor $DARK
-	''
+	'
 	LifeLineBorderColor $SECONDARY_DARK
 	LifeLineBorderThickness 2
 	LifeLineBackgroundColor $SECONDARY_LIGHT
-	''
+	'
 	GroupBorderColor $GRAY
 	GroupFontColor $DARK
 	GroupHeaderFontColor $INFO
 	GroupBackgroundColor $SECONDARY
 	GroupBodyBackgroundColor $BGCOLOR
 	GroupHeaderBackgroundColor $BGCOLOR
-	''
+	'
 	DividerBackgroundColor $WHITE-$LIGHT
     DividerBorderColor $GRAY
     DividerBorderThickness 2
     DividerFontColor $DARK
-	''
+	'
 	ReferenceBackgroundColor $BGCOLOR
 	ReferenceBorderColor $GRAY
 	ReferenceFontColor $DARK
 	ReferenceHeaderFontColor $INFO
-	''
+	'
 	StereotypeFontColor $PRIMARY_TEXT
 }
 !endsub
