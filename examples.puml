@@ -1,0 +1,32 @@
+@startuml Example
+!theme oc-brand from C:\work\projekte\puml-themes\themes
+!include https://raw.githubusercontent.com/rattermeyer/C4-ArchTemplate/release/1-0/C4_arch_template.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+
+Enterprise_Boundary(b01, "Enterprise Context") {
+    Person(p01, "internal Person")
+    Person_Ext(p02, "external Person")
+
+    System_Boundary(b02, "System Context") {
+        System(s01, "System A")
+        System_Ext(s02, "System B")
+        SystemQueue_Ext(s03, "Message Queuing")
+        SystemDb_Ext(s04, "Database")
+
+        BiRel(s01, s03, "")
+        Rel(s02, s04, "")
+    }
+
+    System_Boundary(b03, "System Context") {
+        System(s11, "System C")
+        SystemQueue(s12, "Message Queuing")
+        SystemDb(s13, "Database")
+
+        BiRel(s11, s12, "")
+        Rel(s11, s13, "")
+    }
+
+
+}
+@enduml

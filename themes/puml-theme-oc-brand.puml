@@ -8,9 +8,36 @@ skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
 '
+' Colors taken from the OC Powerpoint Slides
+'
+' Primärfarbe Schrift
+!$ANTHRACITE = "#313338"
+' Primärfarbe Titel und Grafik
+!$BLUE = "#0066E8"
+' Sekundaärfarbe Grafik
+!$DARKBLUE = "#003066"
+' Sekundärfarbe Grafik
+!$RED = "#E82000"
+' Sekundärfarbe Grafik
+!$LIGHTGREY = "#C0C0C0"
+' Sekundärfarbe Grafik
+!$GREY = "#606060"
+' Primärfarbe Hintergrund
+!$WHITE = "#FFFFFF"
+' Sekundärfarbe Hintergrund
+!$BGGREY = "#F6F6F6"
+' Sekundärfarbe
+!$LIGHTBLUE = "#58A0FF"
+' Sekundärfarbe Grafik
+!$DARKRED = "#A01800"
+' Sonderfarbe Mein LieblingsJob
+!$YELLOW = "#F7A43A"
+
+
+'
 ' Colors taken from the css file of the BS theme
 '
-!$BLUE = "#033C73"
+' !$BLUE = "#033C73"
 !$INDIGO = "#6610F2"
 !$PURPLE = "#6F42C1"
 !$PINK = "#E83E8C"
@@ -38,7 +65,8 @@ skinparam useBetaStyle false
 '          and SHADE is calculated by clr * (1 - shade_factor)
 '
 !$FGCOLOR = $DARK
-!$PRIMARY_LIGHT = "#59B6EC"
+' !$PRIMARY_LIGHT = "#59B6EC"
+!$PRIMARY_LIGHT = $BLUE
 !$PRIMARY_DARK = "#2683B9"
 !$PRIMARY_TEXT = $WHITE
 !$SECONDARY_LIGHT = "#EDF0F2"
@@ -57,6 +85,7 @@ skinparam useBetaStyle false
 !$DANGER_DARK = "#9F161B"
 !$DANGER_TEXT = $WHITE
 
+
 !procedure $success($msg)
   <font color=$SUCCESS><b>$msg
 !endprocedure
@@ -70,9 +99,9 @@ skinparam useBetaStyle false
 !endprocedure
 
 !procedure $primary_scheme()
-	FontColor $PRIMARY_TEXT
-	BorderColor $PRIMARY
-	BackgroundColor $PRIMARY_LIGHT-$PRIMARY
+	FontColor $ELEMENT_FONT_COLOR
+	BorderColor $ANTHRACITE
+	BackgroundColor $BLUE
 !endprocedure
 
 '
@@ -440,3 +469,70 @@ skinparam stack {
 	$primary_scheme()
 }
 !endsub
+
+<style>
+wbsDiagram {
+  // all lines (meaning connector and borders, there are no other lines in WBS) are black by default
+  Linecolor $ANTHRACITE
+  arrow {
+    LineColor $ANTHRACITE
+    :depth(2) {
+      LineColor blue
+      LineStyle 4
+      LineThickness .5
+    }
+  }
+  node {
+    BackgroundColor $BLUE
+    FontColor $WHITE
+	:depth(0) {
+		BackgroundColor $DARKBLUE
+		RoundCorner 10
+	}
+    ' :depth(2) {
+    '  LineStyle 2
+    '  LineThickness 2
+    '}
+  }
+  boxless {
+    // will target boxless node with '_'
+    FontColor $ANTHRACITE
+  }  
+}
+</style>
+
+!$FONT_COLOR = $ANTHRACITE
+!$BG_COLOR = $BGGREY
+!$SUCCESS = $LIGHTBLUE
+!$DANGER = $RED
+!$WARNING = $YELLOW
+
+!$ELEMENT_FONT_COLOR ?= $WHITE
+
+!$PERSON_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$PERSON_BG_COLOR ?= $BLUE
+!$PERSON_BORDER_COLOR ?= $ANTHRACITE
+!$EXTERNAL_PERSON_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$EXTERNAL_PERSON_BG_COLOR ?= $DARKBLUE
+!$EXTERNAL_PERSON_BORDER_COLOR ?= $GREY
+
+!$SYSTEM_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$SYSTEM_BG_COLOR ?= $BLUE
+!$SYSTEM_BORDER_COLOR ?= $ANTHRACITE
+!$EXTERNAL_SYSTEM_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$EXTERNAL_SYSTEM_BG_COLOR ?= $DARKBLUE
+!$EXTERNAL_SYSTEM_BORDER_COLOR ?= $GREY
+
+!$CONTAINER_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$CONTAINER_BG_COLOR ?= $BLUE
+!$CONTAINER_BORDER_COLOR ?= $ANTHRACITE
+!$EXTERNAL_CONTAINER_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$EXTERNAL_CONTAINER_BG_COLOR ?= $DARKBLUE
+!$EXTERNAL_CONTAINER_BORDER_COLOR ?= $GREY
+
+!$COMPONENT_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$COMPONENT_BG_COLOR ?= $BLUE
+!$COMPONENT_BORDER_COLOR ?= $ANTHRACITE
+!$EXTERNAL_COMPONENT_FONT_COLOR ?= $ELEMENT_FONT_COLOR 
+!$EXTERNAL_COMPONENT_BG_COLOR ?= $DARKBLUE
+!$EXTERNAL_COMPONENT_BORDER_COLOR ?= $GREY
